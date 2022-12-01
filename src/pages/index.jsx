@@ -1,4 +1,5 @@
-import { PageHead } from "../components";
+import Image from "next/image";
+import { Hero, PageHead, Tools } from "../components";
 
 export default function Home() {
   return (
@@ -9,7 +10,8 @@ export default function Home() {
       />
 
       <div className="container">
-        <h1>Mohammed Atallah</h1>
+        <Hero />
+        <Tools />
       </div>
     </>
   );
