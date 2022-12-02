@@ -8,9 +8,9 @@ const Footer = () => {
   const data = new Date().getFullYear();
 
   return (
-    <footer className="py-4 bg-gray-200 dark:bg-gray-800">
+    <footer className="py-4 bg-background-light">
       <div className="container flex flex-wrap items-center justify-between gap-5">
-        <p className="flex items-center text-sm font-medium text-gray-700 dark:text-gray-400">
+        <p className="flex items-center text-sm font-medium text-accent-light">
           <span className="flex items-center gap-1 mr-1">
             <AiOutlineCopyright size={16} /> {data}
           </span>

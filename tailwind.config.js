@@ -11,15 +11,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "blue-start": "#00BAFF",
-        "blue-stop": "#063EF9",
-        "blue-start-dark": "#b4ebff",
-        "blue-stop-dark": "#5b81ff",
-        "purple-start": "#945BF1",
-        "purple-middle": "#BB48BF",
-        "purple-stop": "#F67E4D",
-        "off-black": "#151c26",
-        "off-white": "#F1F1F1",
+        background: "var(--background)",
+        "background-light": "var(--background-light)",
+        accent: "var(--accent)",
+        "accent-light": "var(--accent-light)",
+        "text-gradient-start": "var(--text-gradient-start)",
+        "text-gradient-via": "var(--text-gradient-via)",
+        "text-gradient-stop": "var(--text-gradient-stop)",
+        // "purple-start": "#945BF1",
+        // "purple-middle": "#BB48BF",
+        // "purple-stop": "#F67E4D",
       },
 
       fontFamily: {

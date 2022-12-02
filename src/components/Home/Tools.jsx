@@ -15,20 +15,22 @@ const tools = [
 
 const Tools = () => {
   return (
-    <div className="py-20">
-      <h2 className="mb-16 text-4xl text-center gradient-text">
-        Some of my favourite tools.
-      </h2>
+    <div className="py-20 bg-primary">
+      <div className="container">
+        <h2 className="mb-16 text-4xl text-center gradient-text">
+          Some of my favourite tools.
+        </h2>
 
-      <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-14">
-        {tools.map((tool, i) => (
-          <div
-            key={tool}
-            className={`relative h-24 w-24  ${i === 0 ? "dark:invert" : ""}`}
-          >
-            <Image src={base + tool} alt="Tool logo" layout="fill" />
-          </div>
-        ))}
+        <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-14">
+          {tools.map((tool, i) => (
+            <div
+              key={tool}
+              className={`relative h-24 w-24  ${i === 0 ? "dark:invert" : ""}`}
+            >
+              <Image src={base + tool} alt="Tool logo" layout="fill" />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

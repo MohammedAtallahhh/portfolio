@@ -3,13 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
-::selection {
-  background: #945bf170;
-}
-
 @layer components {
+  .gradient-text {
+    @apply font-bold text-transparent bg-clip-text bg-gradient-to-r from-text-gradient-start via-text-gradient-via to-text-gradient-stop;
+  }
   .btn--primary {
-    @apply p-3 px-5 font-medium text-white transition-all rounded-md bg-gradient-to-l from-blue-start to-blue-stop bg-[length:400%];
+    @apply p-3 px-5 font-medium text-white transition-all rounded-md bg-gradient-to-r via-text-gradient-via from-text-gradient-start to-text-gradient-stop bg-[length:500%];
+  }
+
+  .btn--primary:hover,
+  .btn--primary:focus {
+    background-size: 200%;
   }
 
   .btn--primary:focus {
@@ -30,10 +34,34 @@
     object-fit: cover;
     object-position: center;
   }
+}
 
-  .gradient-text {
-    @apply font-bold text-transparent bg-clip-text bg-gradient-to-l from-blue-start to-blue-stop dark:from-blue-start-dark dark:to-blue-stop-dark;
-  }
+:root.light {
+  --background: #f5f5f5;
+  --background-light: #e6e8eb;
+
+  --accent: #111827;
+  --accent-light: #374151;
+
+  --text-gradient-start: #003cff;
+  --text-gradient-via: #2081ff;
+  --text-gradient-stop: #00baff;
+}
+
+:root.dark {
+  --background: #111827;
+  --background-light: #222c3a;
+
+  --accent: white;
+  --accent-light: #c5c2c2;
+
+  --text-gradient-start: #0073f7;
+  --text-gradient-via: #51b1ff;
+  --text-gradient-stop: #2ad4ff;
+}
+
+::selection {
+  background: #945bf170;
 }
 
 html,

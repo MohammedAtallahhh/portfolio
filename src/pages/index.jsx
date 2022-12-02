@@ -9,7 +9,7 @@ export default function Home() {
         description="A Frontend developer with focus on React, Nextjs and CSS. I have 2 years of experience working on JavaScript and React projects considering responsive design, accessibility and clean code."
       />
 
-      <div className="container">
+      <div>
         <Hero />
         <Tools />
       </div>
