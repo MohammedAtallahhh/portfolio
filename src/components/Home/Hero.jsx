@@ -9,7 +9,7 @@ const Hero = () => {
           <Image
             src="/images/circles.png"
             alt="circles backgorund"
-            layout="fill"
+            fill
             className="img"
           />
         </div>
@@ -18,7 +18,7 @@ const Hero = () => {
           <Image
             src="/images/logo2.webp"
             alt="Logo avatar"
-            layout="fill"
+            fill
             className="border-4 rounded-full img border-text-gradient-via"
           />
         </div>

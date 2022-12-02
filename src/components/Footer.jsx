@@ -28,7 +28,7 @@ const Footer = () => {
           </Link>
 
           <Link
-            href={"https://www.linkedin.com/in/mo-atallah"}
+            href={"https://www.github.com/MohammedAtallahhh"}
             target="_blank"
             className={`p-2 transition-all rounded-md opacity-75 hover:bg-gray-300 dark:hover:bg-gray-700 hover:opacity-100`}
           >

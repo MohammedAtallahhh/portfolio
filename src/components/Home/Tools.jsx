@@ -25,9 +25,16 @@ const Tools = () => {
           {tools.map((tool, i) => (
             <div
               key={tool}
-              className={`relative h-24 w-24  ${i === 0 ? "dark:invert" : ""}`}
+              className={`relative max-w-[100px] ${
+                i === 0 ? "dark:invert" : ""
+              }`}
             >
-              <Image src={base + tool} alt="Tool logo" layout="fill" />
+              <Image
+                src={base + tool}
+                alt="Tool logo"
+                fill
+                className="!relative"
+              />
             </div>
           ))}
         </div>

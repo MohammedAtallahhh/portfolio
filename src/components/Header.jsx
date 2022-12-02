@@ -15,7 +15,7 @@ const Header = () => {
           <div className="relative w-12 h-12">
             <Image
               src={"/images/logo.webp"}
-              layout="fill"
+              fill
               alt="Logo avatar"
               className="object-cover object-center w-12 border-2 rounded-full border-text-gradient-via"
             />
