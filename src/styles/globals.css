@@ -42,6 +42,7 @@
 
   --accent: #111827;
   --accent-light: #374151;
+  --accent-lighter: #637186;
 
   --text-gradient-start: #003cff;
   --text-gradient-via: #2081ff;
@@ -54,6 +55,7 @@
 
   --accent: white;
   --accent-light: #c5c2c2;
+  --accent-lighter: rgb(161, 161, 161);
 
   --text-gradient-start: #0073f7;
   --text-gradient-via: #51b1ff;
@@ -69,4 +71,8 @@ body,
 #__next {
   width: 100%;
   height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }

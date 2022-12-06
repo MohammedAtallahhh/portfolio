@@ -15,17 +15,17 @@ const tools = [
 
 const Tools = () => {
   return (
-    <div className="py-20 bg-primary">
+    <div className="py-16 bg-primary">
       <div className="container">
-        <h2 className="mb-16 text-4xl text-center gradient-text">
+        <h2 className="mb-10 text-4xl text-center gradient-text">
           Some of my favourite tools.
         </h2>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-14">
+        <div className="max-w-[850px] mx-auto flex flex-wrap items-center justify-center gap-x-16 gap-y-14">
           {tools.map((tool, i) => (
             <div
               key={tool}
-              className={`relative max-w-[100px] ${
+              className={`relative max-w-[85px] ${
                 i === 0 ? "dark:invert" : ""
               }`}
             >

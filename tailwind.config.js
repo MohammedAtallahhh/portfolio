@@ -15,6 +15,7 @@ module.exports = {
         "background-light": "var(--background-light)",
         accent: "var(--accent)",
         "accent-light": "var(--accent-light)",
+        "accent-lighter": "var(--accent-lighter)",
         "text-gradient-start": "var(--text-gradient-start)",
         "text-gradient-via": "var(--text-gradient-via)",
         "text-gradient-stop": "var(--text-gradient-stop)",
