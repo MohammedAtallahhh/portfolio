@@ -1,9 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+
 const Hero = () => {
   return (
-    <div className="relative py-10 overflow-hidden md:py-20">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      className="relative py-10 overflow-hidden md:py-20"
+    >
       <div className="container flex flex-col gap-8 md:gap-10 md:flex-row md:items-center md:justify-center">
         {/* circles backgorund */}
         <div className="absolute inset-0 w-full h-full -z-10 dark:invert-[75%]">
@@ -43,15 +50,22 @@ const Hero = () => {
             </p>
           </div>
 
-          <Link
-            href={"/#projects"}
-            className="btn--primary focus:ring-offset-1 focus:ring-2 active:scale-[102%]"
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
           >
-            Explore projects
-          </Link>
+            <Link
+              href={"/#projects"}
+              className="btn--primary focus:ring-offset-1 focus:ring-2 active:scale-[102%]"
+            >
+              Explore projects
+            </Link>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,8 +1,15 @@
 import React from "react";
 
+import { motion } from "framer-motion";
+
 const Contact = () => {
   return (
-    <div className="py-16 bg-background-light dark:bg-gray-800">
+    <motion.div
+      initial={{ opacity: 0, x: -200 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      className="py-16 bg-gray-100 dark:bg-gray-800"
+    >
       <div className="container">
         <h2 className="mb-10 text-6xl gradient-text">Let&apos;s Talk</h2>
 
@@ -10,7 +17,7 @@ const Contact = () => {
           <div>
             <label
               htmlFor="subject"
-              class="block mb-2 font-medium text-accent dark:text-gray-300"
+              className="block mb-2 font-medium text-accent dark:text-gray-300"
             >
               Name
             </label>
@@ -38,7 +45,7 @@ const Contact = () => {
             />
           </div>
 
-          <div class="sm:col-span-2">
+          <div className="sm:col-span-2">
             <label
               htmlFor="message"
               className="block mb-2 font-medium text-accent dark:text-gray-400"
@@ -52,12 +59,19 @@ const Contact = () => {
               placeholder="Leave a comment..."
             />
           </div>
-          <button type="submit" className="btn btn--primary">
+          <motion.button
+            type="submit"
+            className="btn btn--primary"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.25, duration: 0.25 }}
+          >
             Send message
-          </button>
+          </motion.button>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

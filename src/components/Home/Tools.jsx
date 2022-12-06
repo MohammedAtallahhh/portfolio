@@ -1,5 +1,6 @@
 import Image from "next/image";
-import React from "react";
+
+import { motion } from "framer-motion";
 
 const base = "/images/stack/";
 const tools = [
@@ -15,7 +16,13 @@ const tools = [
 
 const Tools = () => {
   return (
-    <div className="py-16 bg-primary">
+    <motion.div
+      className="py-16 bg-primary"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ delay: 0.5 }}
+    >
       <div className="container">
         <h2 className="mb-10 text-4xl text-center gradient-text">
           Some of my favourite tools.
@@ -39,7 +46,7 @@ const Tools = () => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

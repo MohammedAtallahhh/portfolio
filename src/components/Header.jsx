@@ -6,6 +6,8 @@ import { useTheme } from "next-themes";
 
 import Headroom from "react-headroom";
 
+import { motion } from "framer-motion";
+
 import { VscColorMode } from "react-icons/vsc";
 import { AiOutlineGithub } from "react-icons/ai";
 
@@ -21,10 +23,14 @@ const Header = () => {
         transition: "all .5s ease-in-out",
       }}
     >
-      <header
+      <motion.header
         className={
-          pinned ? "h-32 bg-gray-300 dark:bg-gray-700 shadow-sm" : "h-24"
+          pinned ? "h-24 bg-gray-200 dark:bg-gray-700 shadow-sm" : "h-24"
         }
+        initial={{ y: "-100%" }}
+        whileInView={{ y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.5 }}
       >
         <div className="container flex items-center justify-between h-full">
           {/* Logo */}
@@ -62,7 +68,7 @@ const Header = () => {
             </button>
           </div>
         </div>
-      </header>
+      </motion.header>
     </Headroom>
   );
 };
