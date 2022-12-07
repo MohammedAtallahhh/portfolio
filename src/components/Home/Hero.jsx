@@ -13,7 +13,7 @@ const Hero = () => {
     >
       <div className="container flex flex-col gap-8 md:gap-10 md:flex-row md:items-center md:justify-center">
         {/* circles backgorund */}
-        <div className="absolute inset-0 w-full h-full -z-10 dark:invert-[75%]">
+        <div className="absolute inset-0 w-full h-full -z-10 dark:brightness-75">
           <Image
             src="/images/circles.png"
             alt="circles backgorund"
