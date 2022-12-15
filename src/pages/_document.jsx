@@ -6,8 +6,12 @@ class MyDocument extends Document {
       <Html lang="en-US">
         <Head>
           <link href="/images/favicon.png" rel="shortcut icon" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+          />
         </Head>
-        <body className="antialiased text-accent bg-background">
+        <body className="font-sans antialiased text-accent bg-background">
           <Main />
           <NextScript />
         </body>

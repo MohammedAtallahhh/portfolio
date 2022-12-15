@@ -25,7 +25,9 @@ const Header = () => {
     >
       <motion.header
         className={
-          pinned ? "h-24 bg-gray-200 dark:bg-gray-700 shadow-sm" : "h-24"
+          pinned
+            ? "h-24 bg-gray-200/70 backdrop-blur-[7px] dark:bg-gray-700/70 shadow-sm"
+            : "h-24"
         }
         initial={{ y: "-100%" }}
         whileInView={{ y: 0 }}
@@ -44,7 +46,7 @@ const Header = () => {
               />
             </div>
 
-            <span className="flex items-center gradient-text">
+            <span className="flex items-center font-sans gradient-text">
               @MohammedAtallah
             </span>
           </div>

@@ -26,6 +26,7 @@ module.exports = {
 
       fontFamily: {
         sans: ["Inter", ...fontFamily.sans],
+        aleo: ["Aleo", ...fontFamily.mono],
       },
     },
   },

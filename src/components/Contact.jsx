@@ -49,7 +49,9 @@ const Contact = () => {
         transition={{ duration: 0.5 }}
       >
         <div className="container">
-          <h2 className="mb-10 text-6xl gradient-text">Let&apos;s Talk</h2>
+          <h2 className="mb-10 text-5xl md:text-6xl gradient-text">
+            Let&apos;s Talk
+          </h2>
 
           <form
             ref={formElement}

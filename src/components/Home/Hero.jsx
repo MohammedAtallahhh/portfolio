@@ -30,23 +30,30 @@ const Hero = () => {
             className="border-4 rounded-full img border-text-gradient-via"
           />
         </div>
-        <div className="text-center md:text-left">
-          <h1 className="mb-2 text-4xl leading-tight md:text-5xl md:leading-snug gradient-text">
-            Hey, I am Mohammed Atallah
+        <div className="text-center md:text-left max-w-[750px]">
+          <h2 className="text-xl text-accent-light">
+            Hey, My name is Mohammad Atallah 👋
+          </h2>
+
+          <h1 className="my-8 text-5xl font-bold md:text-6xl gradient-text">
+            I build websites with React
           </h1>
 
-          <div className="mb-8 text-accent-light">
-            <p className="mb-4 text-sm md:text-base max-w-[70ch] mx-auto md:mx-0">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos,
-              iure deserunt quia cupiditate quae ut rerum, temporibus laborum
-              perspiciatis tenetur facilis eligendi culpa blanditiis minima.
-              Natus
+          <div className="mb-16 text-xl md:text-2xl text-accent-lighter">
+            <p className="mx-auto mb-4 leading-relaxed md:mx-0">
+              I am a self-taught{" "}
+              <span className="text-xl font-medium text-indigo-500 bg-indigo-100 dark:text-indigo-100 dark:bg-indigo-500">
+                Frontend developer
+              </span>{" "}
+              and aspiring{" "}
+              <span className="text-xl font-medium text-pink-500 bg-pink-100 dark:text-pink-100 dark:bg-pink-500">
+                Software Engineer
+              </span>
             </p>
 
-            <p className="text-sm md:text-base max-w-[70ch] mx-auto md:mx-0">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-              reiciendis deserunt perferendis cum alias hic voluptatum itaque
-              dolores ut vitae, aut molestias voluptates iste libero!
+            <p className="mx-auto md:mx-0">
+              I love building websites that are responsive, accessible, and
+              user-friendly with focus on clean code and scalability.
             </p>
           </div>
 
@@ -58,7 +65,7 @@ const Hero = () => {
           >
             <Link
               href={"/#projects"}
-              className="btn--primary focus:ring-offset-1 focus:ring-2 active:scale-[102%]"
+              className="btn--primary text-xl focus:ring-offset-1 focus:ring-2 active:scale-[102%]"
             >
               Explore projects
             </Link>

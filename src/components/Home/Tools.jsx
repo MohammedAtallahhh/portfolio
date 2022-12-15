@@ -24,7 +24,7 @@ const Tools = () => {
       transition={{ delay: 0.5 }}
     >
       <div className="container">
-        <h2 className="mb-10 text-4xl text-center gradient-text">
+        <h2 className="mb-10 text-5xl text-center gradient-text">
           Some of my favourite tools.
         </h2>
 

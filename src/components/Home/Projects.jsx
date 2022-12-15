@@ -14,7 +14,7 @@ const Projects = () => {
       <motion.h2
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        className="mb-20 text-4xl text-center gradient-text"
+        className="mb-20 text-5xl text-center gradient-text"
       >
         Featured Projects
       </motion.h2>
