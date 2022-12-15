@@ -45,8 +45,8 @@ const Contact = () => {
       <motion.div
         initial={{ opacity: 0, x: -200 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.25 }}
       >
         <div className="container">
           <h2 className="mb-10 text-5xl md:text-6xl gradient-text">

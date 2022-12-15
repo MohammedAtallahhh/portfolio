@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 const base = "/images/stack/";
 const tools = [
-  "nextjs.svg",
-  "react.svg",
-  "redux.svg",
-  "typescript.svg",
-  "firebase.svg",
-  "tailwindcss.svg",
-  "framer-motion.svg",
-  "vs-code.svg",
+  { src: "nextjs.svg", title: "NextJS" },
+  { src: "react.svg", title: "ReactJS" },
+  { src: "redux.svg", title: "ReduxJS" },
+  { src: "typescript.svg", title: "TypeScript" },
+  { src: "firebase.svg", title: "Firebase" },
+  { src: "tailwindcss.svg", title: "Tailwind CSS" },
+  { src: "framer-motion.svg", title: "Framer Motion" },
+  { src: "vs-code.svg", title: "VS Code" },
 ];
 
 const Tools = () => {
@@ -31,14 +31,15 @@ const Tools = () => {
         <div className="max-w-[850px] mx-auto flex flex-wrap items-center justify-center gap-x-16 gap-y-14">
           {tools.map((tool, i) => (
             <div
-              key={tool}
+              key={tool.src}
               className={`relative max-w-[85px] ${
                 i === 0 ? "dark:invert" : ""
               }`}
+              title={tool.title}
             >
               <Image
-                src={base + tool}
-                alt="Tool logo"
+                src={base + tool.src}
+                alt={tool.title}
                 fill
                 className="!relative"
               />
