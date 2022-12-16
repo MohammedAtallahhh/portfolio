@@ -7,9 +7,9 @@ const Hero = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.2 }}
+      animate={{ opacity: 1, y: 0 }}
+      // viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.2, duration: 0.25 }}
       className="relative py-10 overflow-hidden md:py-20"
     >
       <div className="container flex flex-col gap-8 md:gap-10 md:flex-row md:items-center md:justify-center">
@@ -62,7 +62,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.2 }}
           >
             <Link
               href={"/#projects"}
