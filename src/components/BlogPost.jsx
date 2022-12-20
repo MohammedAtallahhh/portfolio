@@ -1,16 +1,23 @@
-import Image from "next/image";
+// import Image from "next/image";
 import React from "react";
-import distanceToNow from "../lib/dateRelative";
+import { formatDate } from "../helpers";
 
 const BlogPost = ({ post }) => {
+  const { title, excerpt, content, date, time } = post;
+
   return (
     <article>
       <header>
-        <h1 className="text-4xl font-bold">{post.title}</h1>
-        {post.excerpt ? <p className="mt-2 text-xl">{post.excerpt}</p> : null}
-        <time className="flex mt-2 text-gray-400">
-          {distanceToNow(new Date(post.date))}
-        </time>
+        <h1 className="text-4xl font-bold mb-4">{title}</h1>
+        {excerpt ? (
+          <p className="mt-2 text-xl text-accent-light">{excerpt}</p>
+        ) : null}
+
+        <div className="flex mt-4 gap-2 text-gray-400">
+          <span>{formatDate(date)}</span>
+          {` • `}
+          <time>{time}</time>
+        </div>
       </header>
 
       {/* <div className="py-8">
@@ -19,7 +26,7 @@ const BlogPost = ({ post }) => {
 
       <div
         className="mt-10 space-y-4 prose text-accent-light"
-        dangerouslySetInnerHTML={{ __html: post.content }}
+        dangerouslySetInnerHTML={{ __html: content }}
       />
     </article>
   );

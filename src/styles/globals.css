@@ -8,7 +8,7 @@
     @apply font-bold text-transparent font-aleo bg-clip-text bg-gradient-to-r from-text-gradient-start via-text-gradient-via to-text-gradient-stop;
   }
   .btn--primary {
-    @apply py-4 px-6 font-medium text-white transition-all rounded-md bg-gradient-to-r via-text-gradient-via from-text-gradient-start to-text-gradient-stop bg-[length:500%];
+    @apply py-4 px-6 font-medium text-white transition-all rounded-md bg-gradient-to-r via-text-gradient-via from-text-gradient-start to-text-gradient-stop bg-[length:500%] focus:ring-offset-2 focus:ring-offset-background-light focus:ring-blue-300 focus:ring-4 active:scale-[102%] focus:shadow-md focus:shadow-blue-200/10;
   }
 
   .btn--primary:hover,

@@ -39,7 +39,7 @@ const Header = () => {
       initial={{ y: "-100%" }}
       whileInView={{ y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: 0.25, duration: 0.2 }}
+      transition={{ delay: 0.1, duration: 0.2 }}
     >
       <div className="container flex items-center justify-between h-24">
         {/* Logo */}

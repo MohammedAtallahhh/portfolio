@@ -1,20 +1,22 @@
+import { FC } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { motion } from "framer-motion";
 
-const Hero = () => {
+const Hero: FC = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       // viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.2, duration: 0.25 }}
-      className="relative py-10 overflow-hidden md:py-20"
+      transition={{ duration: 0.2 }}
+      className="relative py-10 overflow-hidden md:py-28"
     >
       <div className="container flex flex-col gap-8 md:gap-10 md:flex-row md:items-center md:justify-center">
         {/* circles backgorund */}
-        <div className="absolute inset-0 w-full h-full -z-10 dark:brightness-50">
+        <div className="absolute inset-0 hidden w-full h-full -z-10 dark:brightness-75 lg:block">
           <Image
             src="/images/circles.png"
             alt="circles backgorund"
@@ -41,13 +43,14 @@ const Hero = () => {
           <div className="mb-16 text-xl md:text-2xl text-accent-lighter">
             <p className="mx-auto mb-4 leading-relaxed md:mx-0">
               I am a self-taught{" "}
-              <span className="text-xl font-medium text-indigo-500 bg-indigo-100 dark:text-indigo-100 dark:bg-indigo-500">
+              <span className="text-xl font-bold text-accent">
                 Frontend developer
               </span>{" "}
               and aspiring{" "}
-              <span className="text-xl font-medium text-pink-500 bg-pink-100 dark:text-pink-100 dark:bg-pink-500">
+              <span className="text-xl font-bold text-accent">
                 Software Engineer
               </span>
+              .
             </p>
 
             <p className="mx-auto md:mx-0">
@@ -64,7 +67,7 @@ const Hero = () => {
           >
             <Link
               href={"/#projects"}
-              className="btn--primary text-xl focus:ring-offset-1 focus:ring-2 active:scale-[102%]"
+              className="inline-block text-xl btn--primary"
             >
               Explore projects
             </Link>

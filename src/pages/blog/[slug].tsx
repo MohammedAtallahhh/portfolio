@@ -1,11 +1,10 @@
-import type { InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import { getAllPosts, getPostBySlug } from "../../lib/getPost";
-import markdownToHtml from "../../lib/markdownToHtml";
 
-import PageHead from "../../components/PageHead";
-import { AnimatePage, BlogPost } from "../../components";
+import { AnimatePage, BlogPost, PageHead } from "../../components";
+
+import { getAllPosts, getPostBySlug } from "../../lib/getPost";
+import { markdownToHtml } from "../../helpers";
 
 export default function PostPage({ post }: any) {
   const router = useRouter();
@@ -16,7 +15,7 @@ export default function PostPage({ post }: any) {
 
   return (
     <AnimatePage>
-      <div className="container max-w-[800px] py-10">
+      <div className="container !max-w-[700px] py-20">
         <PageHead
           title={post.title || "My blog"}
           description="A Frontend developer with focus on React, Nextjs and CSS. I have 2 years of experience working on JavaScript and React projects considering responsive design, accessibility and clean code."
