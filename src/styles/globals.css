@@ -40,7 +40,7 @@
   --background: #f5f5f5;
   --background-light: #e6e8eb;
 
-  --accent: #111827;
+  --accent: #192236;
   --accent-light: #374151;
   --accent-lighter: #637186;
 
@@ -53,7 +53,7 @@
   --background: #111827;
   --background-light: #222c3a;
 
-  --accent: white;
+  --accent: hsl(0, 0%, 85%);
   --accent-light: #c5c2c2;
   --accent-lighter: #939daa;
 
@@ -75,4 +75,9 @@ body,
 
 html {
   scroll-behavior: smooth;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
 }

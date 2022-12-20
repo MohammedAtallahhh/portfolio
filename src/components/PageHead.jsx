@@ -1,5 +1,11 @@
 import Head from "next/head";
 
+// interface IPageHead {
+//   title: string;
+//   description: string;
+//   keywords?: string[];
+// }
+
 const PageHead = ({ title, description, keywords }) => {
   return (
     <Head>

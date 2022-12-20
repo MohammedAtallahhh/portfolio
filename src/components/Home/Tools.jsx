@@ -20,8 +20,7 @@ const Tools = () => {
       className="py-16 bg-primary"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ delay: 0.5 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
       <div className="container">
         <h2 className="mb-10 text-5xl text-center gradient-text">
@@ -41,6 +40,9 @@ const Tools = () => {
                 src={base + tool.src}
                 alt={tool.title}
                 fill
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                33vw"
                 className="!relative"
               />
             </div>

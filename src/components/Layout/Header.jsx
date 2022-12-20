@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 
 import Headroom from "react-headroom";
@@ -9,11 +10,30 @@ import Headroom from "react-headroom";
 import { motion } from "framer-motion";
 
 import { VscColorMode } from "react-icons/vsc";
-import { AiOutlineGithub } from "react-icons/ai";
+
+const links = [
+  {
+    name: "",
+    title: "Home",
+    href: "/",
+  },
+  {
+    name: "blog",
+    title: "Blog",
+    href: "/blog",
+  },
+];
 
 const Header = () => {
   const [pinned, setPinned] = useState(false);
+  const [activeLink, setActive] = useState("");
   const { resolvedTheme, setTheme } = useTheme();
+
+  const router = useRouter();
+
+  useEffect(() => {
+    setActive(router.pathname.split("/")[1]);
+  }, [router]);
 
   return (
     <Headroom
@@ -22,12 +42,13 @@ const Header = () => {
       style={{
         transition: "all .5s ease-in-out",
       }}
+      wrapperStyle={pinned ? { padding: "48px" } : {}}
     >
       <motion.header
         className={
           pinned
             ? "h-24 bg-gray-200/70 backdrop-blur-[7px] dark:bg-gray-700/70 shadow-sm"
-            : "h-24"
+            : "h-24 bg-white/5"
         }
         initial={{ y: "-100%" }}
         whileInView={{ y: 0 }}
@@ -36,7 +57,7 @@ const Header = () => {
       >
         <div className="container flex items-center justify-between h-full">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <div className="relative w-12 h-12">
               <Image
                 src={"/images/logo.webp"}
@@ -46,19 +67,25 @@ const Header = () => {
               />
             </div>
 
-            <span className="flex items-center font-sans gradient-text">
+            <span className="items-center hidden font-sans gradient-text md:inline-block">
               @MohammedAtallah
             </span>
-          </div>
+          </Link>
 
-          <div className="flex items-center gap-4">
-            <Link
-              href="https://github.com/MohammedAtallahhh"
-              target={"_blank"}
-              className="w-8 h-8"
-            >
-              <AiOutlineGithub className="w-full h-full" />
-            </Link>
+          <div className="flex flex-wrap items-center">
+            <div className="flex items-center gap-4 mr-8 text-lg text-accent-lighter">
+              {links.map(({ name, title, href }) => (
+                <Link
+                  key={name}
+                  href={href}
+                  className={`transition-colors hover:text-accent ${
+                    activeLink === name ? "font-semibold text-accent" : ""
+                  }`}
+                >
+                  {title}
+                </Link>
+              ))}
+            </div>
 
             <button
               onClick={() =>

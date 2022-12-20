@@ -8,7 +8,7 @@ const Footer = () => {
   const data = new Date().getFullYear();
 
   return (
-    <footer className="py-4 bg-background-light">
+    <footer className="py-4 mt-auto bg-background-light">
       <div className="container flex flex-wrap items-center justify-between gap-5">
         <p className="flex items-center text-sm font-medium text-accent-light">
           <span className="flex items-center gap-1 mr-1">

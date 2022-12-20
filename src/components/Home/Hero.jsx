@@ -14,7 +14,7 @@ const Hero = () => {
     >
       <div className="container flex flex-col gap-8 md:gap-10 md:flex-row md:items-center md:justify-center">
         {/* circles backgorund */}
-        <div className="absolute inset-0 w-full h-full -z-10 dark:brightness-75">
+        <div className="absolute inset-0 w-full h-full -z-10 dark:brightness-50">
           <Image
             src="/images/circles.png"
             alt="circles backgorund"
@@ -32,9 +32,7 @@ const Hero = () => {
           />
         </div>
         <div className="text-center md:text-left max-w-[750px]">
-          <h2 className="text-xl text-accent-light">
-            Hey, My name is Mohammad Atallah 👋
-          </h2>
+          <h2 className="text-xl">Hey, My name is Mohammad Atallah 👋</h2>
 
           <h1 className="my-8 text-5xl font-bold md:text-6xl gradient-text">
             I build websites with React
