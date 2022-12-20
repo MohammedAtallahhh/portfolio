@@ -5,8 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 
-import Headroom from "react-headroom";
-
 import { motion } from "framer-motion";
 
 import { VscColorMode } from "react-icons/vsc";
@@ -36,69 +34,56 @@ const Header = () => {
   }, [router]);
 
   return (
-    <Headroom
-      onPin={() => setPinned(true)}
-      onUnfix={() => setPinned(false)}
-      style={{
-        transition: "all .5s ease-in-out",
-      }}
-      wrapperStyle={pinned ? { padding: "48px" } : {}}
+    <motion.header
+      className="border-b border-background-light"
+      initial={{ y: "-100%" }}
+      whileInView={{ y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.25, duration: 0.2 }}
     >
-      <motion.header
-        className={
-          pinned
-            ? "h-24 bg-gray-200/70 backdrop-blur-[7px] dark:bg-gray-700/70 shadow-sm"
-            : "h-24 bg-white/5"
-        }
-        initial={{ y: "-100%" }}
-        whileInView={{ y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.25, duration: 0.2 }}
-      >
-        <div className="container flex items-center justify-between h-full">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="relative w-12 h-12">
-              <Image
-                src={"/images/logo.webp"}
-                fill
-                alt="Logo avatar"
-                className="object-cover object-center w-12 border-2 rounded-full border-text-gradient-via"
-              />
-            </div>
-
-            <span className="items-center hidden font-sans gradient-text md:inline-block">
-              @MohammedAtallah
-            </span>
-          </Link>
-
-          <div className="flex flex-wrap items-center">
-            <div className="flex items-center gap-4 mr-8 text-lg text-accent-lighter">
-              {links.map(({ name, title, href }) => (
-                <Link
-                  key={name}
-                  href={href}
-                  className={`transition-colors hover:text-accent ${
-                    activeLink === name ? "font-semibold text-accent" : ""
-                  }`}
-                >
-                  {title}
-                </Link>
-              ))}
-            </div>
-
-            <button
-              onClick={() =>
-                setTheme(resolvedTheme === "dark" ? "light" : "dark")
-              }
-              className="w-8 h-8 bg-transparent rounded-full active:scale-105 focus:outline-none"
-            >
-              <VscColorMode className="w-full h-full" />
-            </button>
+      <div className="container flex items-center justify-between h-24">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          <div className="relative w-12 h-12">
+            <Image
+              src={"/images/logo.webp"}
+              fill
+              alt="Logo avatar"
+              className="object-cover object-center w-12 border-2 rounded-full border-text-gradient-via"
+            />
           </div>
+
+          <span className="items-center hidden font-sans gradient-text md:inline-block">
+            @MohammedAtallah
+          </span>
+        </Link>
+
+        <div className="flex flex-wrap items-center">
+          <div className="flex items-center gap-4 mr-8 text-lg text-accent-lighter">
+            {links.map(({ name, title, href }) => (
+              <Link
+                key={name}
+                href={href}
+                className={`transition-colors hover:text-accent ${
+                  activeLink === name ? "font-semibold text-accent" : ""
+                }`}
+              >
+                {title}
+              </Link>
+            ))}
+          </div>
+
+          <button
+            onClick={() =>
+              setTheme(resolvedTheme === "dark" ? "light" : "dark")
+            }
+            className="w-8 h-8 bg-transparent rounded-full active:scale-105 focus:outline-none"
+          >
+            <VscColorMode className="w-full h-full" />
+          </button>
         </div>
-      </motion.header>
-    </Headroom>
+      </div>
+    </motion.header>
   );
 };
 

@@ -1,12 +1,11 @@
 import type { InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import distanceToNow from "../../lib/dateRelative";
 import { getAllPosts, getPostBySlug } from "../../lib/getPost";
 import markdownToHtml from "../../lib/markdownToHtml";
 
 import PageHead from "../../components/PageHead";
-import { AnimatePage } from "../../components";
+import { AnimatePage, BlogPost } from "../../components";
 
 export default function PostPage({ post }: any) {
   const router = useRouter();
@@ -25,27 +24,10 @@ export default function PostPage({ post }: any) {
         />
 
         {router.isFallback ? (
-          <div>Loading…</div>
+          <h2 className="font-bold">Loading…</h2>
         ) : (
           <div>
-            <article>
-              <header>
-                <h1 className="text-4xl font-bold">{post.title}</h1>
-                {post.excerpt ? (
-                  <p className="mt-2 text-xl">{post.excerpt}</p>
-                ) : null}
-                <time className="flex mt-2 text-gray-400">
-                  {distanceToNow(new Date(post.date))}
-                </time>
-              </header>
-
-              <div
-                className="mt-10 space-y-4 prose text-accent-light [&>h2]:text-xl [&>h2]:font-semibold"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
-            </article>
-
-            {/* <Comment /> */}
+            <BlogPost post={post} />
           </div>
         )}
       </div>
@@ -58,6 +40,7 @@ export async function getStaticProps({ params }: any) {
     "slug",
     "title",
     "excerpt",
+    "img",
     "date",
     "content",
   ]);

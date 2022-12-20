@@ -5,3 +5,4 @@ export { default as Tools } from "./Home/Tools";
 export { default as Projects } from "./Home/Projects";
 export { default as Contact } from "./Contact";
 export { default as AnimatePage } from "./AnimatePage";
+export { default as BlogPost } from "./BlogPost";
