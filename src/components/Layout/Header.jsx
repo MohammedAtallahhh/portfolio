@@ -10,16 +10,16 @@ import { motion } from "framer-motion";
 import { VscColorMode } from "react-icons/vsc";
 
 const links = [
-  {
-    name: "",
-    title: "Home",
-    href: "/",
-  },
-  {
-    name: "blog",
-    title: "Blog",
-    href: "/blog",
-  },
+  // {
+  //   name: "",
+  //   title: "Home",
+  //   href: "/",
+  // },
+  // {
+  //   name: "blog",
+  //   title: "Blog",
+  //   href: "/blog",
+  // },
 ];
 
 const Header = () => {
