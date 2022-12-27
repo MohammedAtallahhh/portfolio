@@ -16,14 +16,14 @@ const Hero: FC = () => {
     >
       <div className="container flex flex-col gap-8 md:gap-10 md:flex-row md:items-center md:justify-center">
         {/* circles backgorund */}
-        <div className="absolute inset-0 hidden w-full h-full -z-10 dark:brightness-75 lg:block">
+        {/* <div className="absolute inset-0 hidden w-full h-full -z-10 dark:brightness-75 lg:block">
           <Image
             src="/images/circles.png"
             alt="circles backgorund"
             fill
             className="img"
           />
-        </div>
+        </div> */}
 
         <div className="relative flex-shrink-0 w-48 h-48 mx-auto select-none md:mx-0">
           <Image

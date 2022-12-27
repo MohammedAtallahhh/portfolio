@@ -53,7 +53,7 @@ const Header = () => {
             />
           </div>
 
-          <span className="items-center hidden font-sans gradient-text md:inline-block">
+          <span className="items-center hidden mb-0 font-sans text-base gradient-text md:inline-block">
             @MohammedAtallah
           </span>
         </Link>

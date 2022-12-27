@@ -4,6 +4,23 @@ import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 
+const contactVariants = {
+  initial: { opacity: 0, x: -200 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, amount: 0.25 },
+  transition: { duration: 0.25 },
+};
+
+const buttonVariants = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  viewport: { once: true },
+  transition: { delay: 0.25, duration: 0.25 },
+};
+
+const inputClass =
+  "block w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:shadow-md text-accent bg-[#eee] focus:outline-none focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-gray-400 dark:focus:border-gray-400";
+
 const Contact = () => {
   const formElement = useRef();
   const initialFormState = { name: "", email: "", message: "" };
@@ -41,17 +58,10 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-100 dark:bg-gray-800">
-      <motion.div
-        initial={{ opacity: 0, x: -200 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.25 }}
-        transition={{ duration: 0.25 }}
-      >
+    <section className="bg-background-light">
+      <motion.div {...contactVariants}>
         <div className="container">
-          <h2 className="mb-10 text-5xl md:text-6xl gradient-text">
-            Let&apos;s Talk
-          </h2>
+          <h2 className="gradient-text">Let&apos;s Talk</h2>
 
           <form
             ref={formElement}
@@ -62,7 +72,7 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="name"
-                className="block mb-2 font-medium text-accent dark:text-gray-300"
+                className="block mb-2 font-medium text-accent-light"
               >
                 Name
               </label>
@@ -71,9 +81,9 @@ const Contact = () => {
                 id="name"
                 name="name"
                 placeholder="John Doe"
-                required
-                className="block w-full p-4 border border-gray-300 rounded-lg shadow-sm text-accent focus:outline-none focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-gray-400 dark:focus:border-gray-400 dark:shadow-sm-light"
+                className={inputClass}
                 value={form.name}
+                required
                 onChange={(e) =>
                   setForm((form) => ({ ...form, name: e.target.value }))
                 }
@@ -82,7 +92,7 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block mb-2 font-medium text-accent"
+                className="block mb-2 font-medium text-accent-light"
               >
                 Your email
               </label>
@@ -91,19 +101,19 @@ const Contact = () => {
                 id="email"
                 name="email"
                 placeholder="name@gmail.com"
-                required
-                className="block w-full p-4 border border-gray-300 rounded-lg shadow-sm text-accent bg-gray-50 focus:outline-none focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-gray-400 dark:focus:border-gray-400 dark:shadow-sm-light"
+                className={inputClass}
                 value={form.email}
+                required
                 onChange={(e) =>
                   setForm((form) => ({ ...form, email: e.target.value }))
                 }
               />
             </div>
 
-            <div className="sm:col-span-2">
+            <div>
               <label
                 htmlFor="message"
-                className="block mb-2 font-medium text-accent dark:text-gray-400"
+                className="block mb-2 font-medium text-accent-light"
               >
                 Your message
               </label>
@@ -112,7 +122,7 @@ const Contact = () => {
                 name="message"
                 rows="6"
                 placeholder="Leave a comment..."
-                className="block w-full p-4 border border-gray-300 rounded-lg shadow-sm text-accent bg-gray-50 focus:outline-none focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-gray-400 dark:focus:border-gray-400"
+                className={inputClass}
                 value={form.message}
                 onChange={(e) =>
                   setForm((form) => ({ ...form, message: e.target.value }))
@@ -122,10 +132,7 @@ const Contact = () => {
             <motion.button
               type="submit"
               className="btn btn--primary"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.25, duration: 0.25 }}
+              {...buttonVariants}
             >
               Send message
             </motion.button>

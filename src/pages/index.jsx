@@ -1,11 +1,10 @@
-import Image from "next/image";
 import {
+  About,
   AnimatePage,
   Contact,
   Hero,
   PageHead,
   Projects,
-  Tools,
 } from "../components";
 
 export default function Home() {
@@ -18,7 +17,7 @@ export default function Home() {
 
       <div>
         <Hero />
-        <Tools />
+        <About />
         <Projects />
         <Contact />
       </div>

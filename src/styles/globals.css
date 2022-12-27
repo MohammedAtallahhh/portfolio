@@ -5,10 +5,10 @@
 
 @layer components {
   .gradient-text {
-    @apply font-bold text-transparent font-aleo bg-clip-text bg-gradient-to-r from-text-gradient-start via-text-gradient-via to-text-gradient-stop;
+    @apply mb-20 text-5xl font-bold text-transparent md:text-7xl font-aleo bg-clip-text bg-gradient-to-r from-text-gradient-start via-text-gradient-via to-text-gradient-stop;
   }
   .btn--primary {
-    @apply py-4 px-6 font-medium text-white transition-all rounded-md bg-gradient-to-r via-text-gradient-via from-text-gradient-start to-text-gradient-stop bg-[length:500%] focus:ring-offset-2 focus:ring-offset-background-light focus:ring-blue-300 focus:ring-4 active:scale-[102%] focus:shadow-md focus:shadow-blue-200/10;
+    @apply py-4 px-8 font-medium text-white transition-all rounded-md bg-gradient-to-r via-text-gradient-via from-text-gradient-start to-text-gradient-stop bg-[length:500%] focus:ring-offset-2 focus:ring-offset-background-light focus:ring-blue-300 focus:ring-4 active:scale-[102%] focus:shadow-md focus:shadow-blue-200/10 cursor-pointer;
   }
 
   .btn--primary:hover,
@@ -80,4 +80,27 @@ html {
 #__next {
   display: flex;
   flex-direction: column;
+}
+
+section,
+footer {
+  padding: 4rem 0;
+}
+
+.link {
+  --bg: rgb(0, 103, 221);
+  --text: white;
+  color: var(--bg);
+  text-decoration: underline currentColor 2px;
+  transition: 100ms ease;
+}
+
+.link:hover {
+  text-decoration: none;
+  background: var(--bg);
+  color: var(--text);
+}
+
+html.dark .link {
+  --bg: rgb(20, 158, 204);
 }

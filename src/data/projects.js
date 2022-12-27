@@ -1,6 +1,7 @@
 import Instagram from "../../public/images/projects/instagram.png";
 import PlaySpace from "../../public/images/projects/play-space.png";
 import Manage from "../../public/images/projects/manage.png";
+import Gym from "../../public/images/projects/gym.png";
 
 export const projects = [
   {
@@ -29,5 +30,14 @@ export const projects = [
     tools: ["JavaScript", "HTML", "CSS"],
     code: "https://github.com/MohammedAtallahhh/manage-landing-page",
     demo: "https://manage2.netlify.app/",
+  },
+  {
+    id: 4,
+    name: "Next Gym",
+    description: "",
+    image: Gym,
+    tools: ["Nextjs", "TailwindCSS", "RapidAPI"],
+    // code: "https://github.com/MohammedAtallahhh",
+    demo: "https://next--gym.vercel.app/",
   },
 ];
