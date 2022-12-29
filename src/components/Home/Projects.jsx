@@ -19,7 +19,7 @@ const Projects = () => {
         Featured Projects
       </motion.h2>
 
-      <div className="grid grid-cols-1 gap-x-10 gap-y-20 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-x-10 gap-y-20 md:grid-cols-2">
         {projects.map(
           ({ id, name, description, image, tools, demo, code }, i) => (
             <motion.div

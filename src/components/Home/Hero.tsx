@@ -15,15 +15,23 @@ const Hero: FC = () => {
       className="relative py-10 overflow-hidden md:py-28"
     >
       <div className="container flex flex-col gap-8 md:gap-10 md:flex-row md:items-center md:justify-center">
-        {/* circles backgorund */}
-        {/* <div className="absolute inset-0 hidden w-full h-full -z-10 dark:brightness-75 lg:block">
+        {/* backgorund illustratons */}
+        <div className="absolute hidden md:block invert-[50%] opacity-25 left-0 bottom-0 w-80 h-96 -z-10 dark:brightness-75 lg:block">
           <Image
-            src="/images/circles.png"
+            src="/images/dots.svg"
             alt="circles backgorund"
             fill
-            className="img"
+            className="!relative w-full h-full object-cover"
           />
-        </div> */}
+        </div>
+        <div className="absolute hidden md:block invert-[50%] opacity-25 right-0 top-0 w-80 h-96 -z-10 dark:brightness-75 lg:block">
+          <Image
+            src="/images/dots.svg"
+            alt="circles backgorund"
+            fill
+            className="!relative w-full h-full object-cover"
+          />
+        </div>
 
         <div className="relative flex-shrink-0 w-48 h-48 mx-auto select-none md:mx-0">
           <Image

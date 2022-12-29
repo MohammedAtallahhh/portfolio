@@ -63,7 +63,8 @@
 }
 
 ::selection {
-  background: #945bf170;
+  background: #ffa96249;
+  color: white;
 }
 
 html,
@@ -103,4 +104,8 @@ footer {
 
 html.dark .link {
   --bg: rgb(20, 158, 204);
+}
+
+img {
+  user-select: none;
 }
