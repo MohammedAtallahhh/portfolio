@@ -73,7 +73,7 @@ const Projects = () => {
                     <h4 className="text-accent-lighter">{description}</h4>
                   )}
 
-                  <div className="flex mt-3 gap-3 text-sm text-blue-500 dark:text-blue-300">
+                  <div className="flex flex-wrap mt-3 gap-3 text-[12px] text-blue-500 dark:text-blue-300">
                     {tools.map((tool) => (
                       <span
                         key={tool}
