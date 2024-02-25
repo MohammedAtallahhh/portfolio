@@ -109,3 +109,7 @@ html.dark .link {
 img {
   user-select: none;
 }
+
+#projects-container > * {
+  padding: 0;
+}
